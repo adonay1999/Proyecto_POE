@@ -6,6 +6,7 @@
 package Interfacez;
 
 import java.awt.Color;
+import java.awt.PopupMenu;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,8 +31,14 @@ Thread hilo;
      */
     
     int x, y;
+    
     public Inicio() {
         initComponents();
+        
+        
+         
+       
+        
         ////////////// Interfacez grafica /////////////////////
         BarraInfo.setVisible(false); //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
         Btn_Ocultar_BarrInfo.setVisible(false); //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
@@ -76,6 +83,11 @@ Thread hilo;
     
     
     
+     //////INS////////
+        ////Interfacez///////
+        Pd_Intefaz_grafica.Pd_Perfil perfil = new Pd_Intefaz_grafica.Pd_Perfil();
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -99,7 +111,7 @@ Thread hilo;
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        Btn_perfil = new javax.swing.JButton();
         Panel_Barra_De_Arriba = new javax.swing.JPanel();
         Lb_Cerrar_App = new javax.swing.JLabel();
         Iniciar_Sesion = new javax.swing.JLabel();
@@ -261,19 +273,26 @@ Thread hilo;
         jButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btncfg2.png"))); // NOI18N
         Panel_Barra_info.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 60, 70));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btnperfil1.png"))); // NOI18N
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jButton4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btnperfil2.png"))); // NOI18N
-        jButton4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btnperfil2.png"))); // NOI18N
-        Panel_Barra_info.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 0, 60, 70));
+        Btn_perfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btnperfil1.png"))); // NOI18N
+        Btn_perfil.setBorder(null);
+        Btn_perfil.setBorderPainted(false);
+        Btn_perfil.setContentAreaFilled(false);
+        Btn_perfil.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btnperfil2.png"))); // NOI18N
+        Btn_perfil.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btnperfil2.png"))); // NOI18N
+        Btn_perfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_perfilActionPerformed(evt);
+            }
+        });
+        Panel_Barra_info.add(Btn_perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 0, 60, 70));
 
         javax.swing.GroupLayout BarraInfoLayout = new javax.swing.GroupLayout(BarraInfo);
         BarraInfo.setLayout(BarraInfoLayout);
         BarraInfoLayout.setHorizontalGroup(
             BarraInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel_Barra_info, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(BarraInfoLayout.createSequentialGroup()
+                .addComponent(Panel_Barra_info, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         BarraInfoLayout.setVerticalGroup(
             BarraInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -284,7 +303,7 @@ Thread hilo;
         PanelPrincipal.setLayout(PanelPrincipalLayout);
         PanelPrincipalLayout.setHorizontalGroup(
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BarraInfo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BarraInfo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         PanelPrincipalLayout.setVerticalGroup(
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1140,9 +1159,9 @@ Panel_Usuario.setVisible(true);        //Tag: *hace referencia a interfaces y di
     }//GEN-LAST:event_Btn_HomeMouseEntered
 
     private void Btn_HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HomeActionPerformed
-    Btn_Home.setVisible(false);
-    BarraInfo.setVisible(true);
-    Btn_Ocultar_BarrInfo.setVisible(true);
+    Btn_Home.setVisible(false);//Tag: *hace referencia a interfaces y diseños visual de la aplicacion* 
+    BarraInfo.setVisible(true); //Tag: *hace referencia a interfaces y diseños visual de la aplicacion* 
+    Btn_Ocultar_BarrInfo.setVisible(true);//Tag: *hace referencia a interfaces y diseños visual de la aplicacion* 
     }//GEN-LAST:event_Btn_HomeActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -1155,9 +1174,19 @@ Panel_Usuario.setVisible(true);        //Tag: *hace referencia a interfaces y di
 
     private void Btn_Ocultar_BarrInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Ocultar_BarrInfoActionPerformed
      BarraInfo.setVisible(false);  //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
-     Btn_Ocultar_BarrInfo.setVisible(false);
-     Btn_Home.setVisible(true);
+     Btn_Ocultar_BarrInfo.setVisible(false);//Tag: *hace referencia a interfaces y diseños visual de la aplicacion* 
+     Btn_Home.setVisible(true);//Tag: *hace referencia a interfaces y diseños visual de la aplicacion* 
     }//GEN-LAST:event_Btn_Ocultar_BarrInfoActionPerformed
+
+    private void Btn_perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_perfilActionPerformed
+    
+         PanelPrincipal.add(perfil);
+         PanelPrincipal.repaint();
+        PanelPrincipal.updateUI();
+        PanelPrincipal.revalidate();
+        perfil.setVisible(true);
+         
+    }//GEN-LAST:event_Btn_perfilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1208,6 +1237,7 @@ Panel_Usuario.setVisible(true);        //Tag: *hace referencia a interfaces y di
     private javax.swing.JButton Btn_Ocultar_BarrInfo;
     private javax.swing.JButton Btn_Registrarte;
     private javax.swing.JButton Btn_Usuario;
+    private javax.swing.JButton Btn_perfil;
     private javax.swing.JButton Correo;
     private javax.swing.JLabel Iniciar_Sesion;
     private javax.swing.JLabel Lb_Articulos;
@@ -1241,7 +1271,6 @@ Panel_Usuario.setVisible(true);        //Tag: *hace referencia a interfaces y di
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JLabel lbFecha;
     private javax.swing.JLabel lbHora;

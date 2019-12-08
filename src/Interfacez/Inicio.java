@@ -29,6 +29,8 @@ Thread hilo;
     public Inicio() {
         initComponents();
         BarraInfo.setVisible(false);
+        Panel_Comiunidad.setVisible(false);
+        PanelNotificacion_Inferior.setVisible(false);
         this.setLocationRelativeTo(null);   //Centrar la ventana
         lbFecha.setText(fecha());
         hilo=new Thread(this);
@@ -55,7 +57,11 @@ Thread hilo;
 
         }
     }
-
+    
+    //////////////////////////////////Interfaz Grafico////////////////////////////////////////
+    ///////////////////////Tag: *hace referencia a interfaces y diseños visual de la aplicacion*    
+    /////// comentario: este tag esta añadido a las ordenes que estan relacionadas con el contenido grafico de la aplicacion
+    /////// y no obstaculiza ninguna logica ni metodo de este programa  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -75,28 +81,32 @@ Thread hilo;
         jButton2 = new javax.swing.JButton();
         PanelPrincipal = new javax.swing.JPanel();
         BarraInfo = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        Panel_Barra_De_Arriba = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         btn1 = new javax.swing.JButton();
-        Btn_Usuario = new javax.swing.JButton();
-        Btn_Inversionista = new javax.swing.JButton();
-        Btn_Comunidad = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         Panel_Notificacion_Superior = new javax.swing.JPanel();
         cLabel1 = new com.bolivia.label.CLabel();
         Correo = new javax.swing.JButton();
         PanelNotificacion_Inferior = new javax.swing.JPanel();
+        Lb_Solicitudes = new javax.swing.JLabel();
+        Lb_Mensajes = new javax.swing.JLabel();
+        Lb_Articulos = new javax.swing.JLabel();
         Btn_2 = new javax.swing.JButton();
         Btn_1 = new javax.swing.JButton();
         Btn_3 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        N_Solicitudes = new javax.swing.JLabel();
+        N_Mensajes = new javax.swing.JLabel();
+        N_Articulos = new javax.swing.JLabel();
         Notificaciones = new javax.swing.JButton();
+        Panel_De_Arriba_Centrado = new javax.swing.JPanel();
+        Btn_Comunidad = new javax.swing.JButton();
+        Btn_Usuario = new javax.swing.JButton();
+        Btn_Inversionista = new javax.swing.JButton();
+        Panel_Comiunidad = new javax.swing.JPanel();
+        Lb_Foro = new javax.swing.JLabel();
+        Lb_New_Pagi = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
 
@@ -213,21 +223,24 @@ Thread hilo;
 
         getContentPane().add(PanelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 90, 1000, 420));
 
-        jPanel3.setBackground(new java.awt.Color(82, 90, 128));
-        jPanel3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        Panel_Barra_De_Arriba.setBackground(new java.awt.Color(82, 90, 128));
+        Panel_Barra_De_Arriba.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
-                jPanel3MouseDragged(evt);
+                Panel_Barra_De_ArribaMouseDragged(evt);
             }
         });
-        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        Panel_Barra_De_Arriba.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Panel_Barra_De_ArribaMouseEntered(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel3MousePressed(evt);
+                Panel_Barra_De_ArribaMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jPanel3MouseReleased(evt);
+                Panel_Barra_De_ArribaMouseReleased(evt);
             }
         });
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Panel_Barra_De_Arriba.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(109, 109, 109));
         jLabel1.setFont(new java.awt.Font("Broadway", 1, 36)); // NOI18N
@@ -240,7 +253,7 @@ Thread hilo;
                 jLabel1MouseClicked(evt);
             }
         });
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 0, 50, 40));
+        Panel_Barra_De_Arriba.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 0, 50, 40));
 
         jLabel5.setBackground(new java.awt.Color(204, 204, 204));
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -248,7 +261,7 @@ Thread hilo;
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Iniciar sesión");
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 80, 30));
+        Panel_Barra_De_Arriba.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 80, 30));
 
         btn1.setBackground(new java.awt.Color(153, 153, 153));
         btn1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -268,57 +281,7 @@ Thread hilo;
                 btn1ActionPerformed(evt);
             }
         });
-        jPanel3.add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 120, 30));
-
-        Btn_Usuario.setForeground(new java.awt.Color(204, 204, 204));
-        Btn_Usuario.setText("Usuarios");
-        Btn_Usuario.setBorder(null);
-        Btn_Usuario.setBorderPainted(false);
-        Btn_Usuario.setContentAreaFilled(false);
-        Btn_Usuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Btn_UsuarioMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Btn_UsuarioMouseExited(evt);
-            }
-        });
-        jPanel3.add(Btn_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 90, 20));
-
-        Btn_Inversionista.setForeground(new java.awt.Color(204, 204, 204));
-        Btn_Inversionista.setText("Inversionistas");
-        Btn_Inversionista.setBorder(null);
-        Btn_Inversionista.setBorderPainted(false);
-        Btn_Inversionista.setContentAreaFilled(false);
-        Btn_Inversionista.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Btn_InversionistaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Btn_InversionistaMouseExited(evt);
-            }
-        });
-        jPanel3.add(Btn_Inversionista, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, 90, 20));
-
-        Btn_Comunidad.setForeground(new java.awt.Color(204, 204, 204));
-        Btn_Comunidad.setText("Comunidad");
-        Btn_Comunidad.setBorder(null);
-        Btn_Comunidad.setBorderPainted(false);
-        Btn_Comunidad.setContentAreaFilled(false);
-        Btn_Comunidad.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Btn_ComunidadMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Btn_ComunidadMouseExited(evt);
-            }
-        });
-        Btn_Comunidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_ComunidadActionPerformed(evt);
-            }
-        });
-        jPanel3.add(Btn_Comunidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 90, 20));
+        Panel_Barra_De_Arriba.add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 120, 30));
 
         jButton5.setBackground(new java.awt.Color(82, 90, 128));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -334,9 +297,14 @@ Thread hilo;
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 70, 70));
+        Panel_Barra_De_Arriba.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 70, 70));
 
         Panel_Notificacion_Superior.setBackground(new java.awt.Color(82, 90, 128));
+        Panel_Notificacion_Superior.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Panel_Notificacion_SuperiorMouseEntered(evt);
+            }
+        });
 
         cLabel1.setBackground(new java.awt.Color(102, 102, 102));
         cLabel1.setText("");
@@ -372,6 +340,48 @@ Thread hilo;
             }
         });
         PanelNotificacion_Inferior.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Lb_Solicitudes.setBackground(new java.awt.Color(204, 204, 204));
+        Lb_Solicitudes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        Lb_Solicitudes.setForeground(new java.awt.Color(204, 204, 204));
+        Lb_Solicitudes.setText("Solicitudes");
+        Lb_Solicitudes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Lb_SolicitudesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Lb_SolicitudesMouseExited(evt);
+            }
+        });
+        PanelNotificacion_Inferior.add(Lb_Solicitudes, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 4, 100, 15));
+
+        Lb_Mensajes.setBackground(new java.awt.Color(204, 204, 204));
+        Lb_Mensajes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        Lb_Mensajes.setForeground(new java.awt.Color(204, 204, 204));
+        Lb_Mensajes.setText("Mensajes");
+        Lb_Mensajes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Lb_MensajesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Lb_MensajesMouseExited(evt);
+            }
+        });
+        PanelNotificacion_Inferior.add(Lb_Mensajes, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 27, 100, 15));
+
+        Lb_Articulos.setBackground(new java.awt.Color(204, 204, 204));
+        Lb_Articulos.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        Lb_Articulos.setForeground(new java.awt.Color(204, 204, 204));
+        Lb_Articulos.setText("Articulos");
+        Lb_Articulos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Lb_ArticulosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Lb_ArticulosMouseExited(evt);
+            }
+        });
+        PanelNotificacion_Inferior.add(Lb_Articulos, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 55, 90, 15));
 
         Btn_2.setBorder(null);
         Btn_2.setBorderPainted(false);
@@ -427,39 +437,26 @@ Thread hilo;
         });
         PanelNotificacion_Inferior.add(Btn_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, 50, 160, 20));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 161, 255));
-        jLabel2.setText("&");
-        jLabel2.setMaximumSize(new java.awt.Dimension(9, 14));
-        PanelNotificacion_Inferior.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 4, 50, 15));
+        N_Solicitudes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        N_Solicitudes.setForeground(new java.awt.Color(0, 161, 255));
+        N_Solicitudes.setText("&");
+        N_Solicitudes.setMaximumSize(new java.awt.Dimension(9, 14));
+        PanelNotificacion_Inferior.add(N_Solicitudes, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 4, 50, 15));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 161, 255));
-        jLabel3.setText("&");
-        PanelNotificacion_Inferior.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 24, 50, 21));
+        N_Mensajes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        N_Mensajes.setForeground(new java.awt.Color(0, 161, 255));
+        N_Mensajes.setText("&");
+        PanelNotificacion_Inferior.add(N_Mensajes, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 24, 50, 21));
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 161, 255));
-        jLabel4.setText("&");
-        PanelNotificacion_Inferior.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 53, 50, 19));
-
-        jLabel8.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel8.setText("Solicitudes");
-        PanelNotificacion_Inferior.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 4, 100, 15));
-
-        jLabel9.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel9.setText("Mensajes");
-        PanelNotificacion_Inferior.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 27, 100, 15));
-
-        jLabel10.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel10.setText("Articulos");
-        PanelNotificacion_Inferior.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 55, 90, 15));
+        N_Articulos.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        N_Articulos.setForeground(new java.awt.Color(0, 161, 255));
+        N_Articulos.setText("&");
+        N_Articulos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N_ArticulosMouseEntered(evt);
+            }
+        });
+        PanelNotificacion_Inferior.add(N_Articulos, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 53, 50, 19));
 
         Notificaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/notificacion1.png"))); // NOI18N
         Notificaciones.setBorder(null);
@@ -480,7 +477,7 @@ Thread hilo;
         Panel_Notificacion_SuperiorLayout.setHorizontalGroup(
             Panel_Notificacion_SuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_Notificacion_SuperiorLayout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addGap(0, 3, Short.MAX_VALUE)
                 .addComponent(PanelNotificacion_Inferior, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Panel_Notificacion_SuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -496,22 +493,161 @@ Thread hilo;
                 .addContainerGap()
                 .addGroup(Panel_Notificacion_SuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel_Notificacion_SuperiorLayout.createSequentialGroup()
-                        .addGroup(Panel_Notificacion_SuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(Panel_Notificacion_SuperiorLayout.createSequentialGroup()
-                                .addComponent(Correo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Notificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Correo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Notificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_Notificacion_SuperiorLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(PanelNotificacion_Inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28))))
+                        .addGap(28, 28, 28))
+                    .addGroup(Panel_Notificacion_SuperiorLayout.createSequentialGroup()
+                        .addComponent(cLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
-        jPanel3.add(Panel_Notificacion_Superior, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, 290, 90));
+        Panel_Barra_De_Arriba.add(Panel_Notificacion_Superior, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 280, 80));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 90));
+        Panel_De_Arriba_Centrado.setBackground(new java.awt.Color(82, 90, 128));
+        Panel_De_Arriba_Centrado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Panel_De_Arriba_CentradoMouseEntered(evt);
+            }
+        });
+
+        Btn_Comunidad.setForeground(new java.awt.Color(204, 204, 204));
+        Btn_Comunidad.setText("Comunidad");
+        Btn_Comunidad.setBorder(null);
+        Btn_Comunidad.setBorderPainted(false);
+        Btn_Comunidad.setContentAreaFilled(false);
+        Btn_Comunidad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Btn_ComunidadMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Btn_ComunidadMouseExited(evt);
+            }
+        });
+        Btn_Comunidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_ComunidadActionPerformed(evt);
+            }
+        });
+
+        Btn_Usuario.setForeground(new java.awt.Color(204, 204, 204));
+        Btn_Usuario.setText("Usuarios");
+        Btn_Usuario.setBorder(null);
+        Btn_Usuario.setBorderPainted(false);
+        Btn_Usuario.setContentAreaFilled(false);
+        Btn_Usuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Btn_UsuarioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Btn_UsuarioMouseExited(evt);
+            }
+        });
+
+        Btn_Inversionista.setForeground(new java.awt.Color(204, 204, 204));
+        Btn_Inversionista.setText("Inversionistas");
+        Btn_Inversionista.setBorder(null);
+        Btn_Inversionista.setBorderPainted(false);
+        Btn_Inversionista.setContentAreaFilled(false);
+        Btn_Inversionista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Btn_InversionistaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Btn_InversionistaMouseExited(evt);
+            }
+        });
+
+        Panel_Comiunidad.setBackground(new java.awt.Color(82, 90, 110));
+        Panel_Comiunidad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Panel_ComiunidadMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Panel_ComiunidadMouseExited(evt);
+            }
+        });
+
+        Lb_Foro.setForeground(new java.awt.Color(204, 204, 204));
+        Lb_Foro.setText("Foro");
+        Lb_Foro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Lb_ForoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Lb_ForoMouseExited(evt);
+            }
+        });
+
+        Lb_New_Pagi.setForeground(new java.awt.Color(204, 204, 204));
+        Lb_New_Pagi.setText("Nueva Pagina");
+        Lb_New_Pagi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Lb_New_PagiMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Lb_New_PagiMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Panel_ComiunidadLayout = new javax.swing.GroupLayout(Panel_Comiunidad);
+        Panel_Comiunidad.setLayout(Panel_ComiunidadLayout);
+        Panel_ComiunidadLayout.setHorizontalGroup(
+            Panel_ComiunidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Lb_New_Pagi, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_ComiunidadLayout.createSequentialGroup()
+                .addGap(3, 3, 3)
+                .addComponent(Lb_Foro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        Panel_ComiunidadLayout.setVerticalGroup(
+            Panel_ComiunidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_ComiunidadLayout.createSequentialGroup()
+                .addComponent(Lb_Foro, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Lb_New_Pagi, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout Panel_De_Arriba_CentradoLayout = new javax.swing.GroupLayout(Panel_De_Arriba_Centrado);
+        Panel_De_Arriba_Centrado.setLayout(Panel_De_Arriba_CentradoLayout);
+        Panel_De_Arriba_CentradoLayout.setHorizontalGroup(
+            Panel_De_Arriba_CentradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_De_Arriba_CentradoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Btn_Comunidad, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Btn_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(Btn_Inversionista)
+                .addGap(32, 32, 32))
+            .addGroup(Panel_De_Arriba_CentradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Panel_De_Arriba_CentradoLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(Panel_Comiunidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(132, 132, 132)))
+        );
+        Panel_De_Arriba_CentradoLayout.setVerticalGroup(
+            Panel_De_Arriba_CentradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_De_Arriba_CentradoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Panel_De_Arriba_CentradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(Btn_Usuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Btn_Comunidad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Btn_Inversionista, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
+            .addGroup(Panel_De_Arriba_CentradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_De_Arriba_CentradoLayout.createSequentialGroup()
+                    .addContainerGap(27, Short.MAX_VALUE)
+                    .addComponent(Panel_Comiunidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
+        );
+
+        Panel_Barra_De_Arriba.add(Panel_De_Arriba_Centrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 280, 90));
+
+        getContentPane().add(Panel_Barra_De_Arriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 90));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -522,18 +658,18 @@ Thread hilo;
         return formatofecha.format(fecha);
     }
     
-    private void jPanel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MousePressed
+    private void Panel_Barra_De_ArribaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Barra_De_ArribaMousePressed
         x = evt.getX(); //movimiento de ventana
         y = evt.getY(); //movimiento de ventana 
-    }//GEN-LAST:event_jPanel3MousePressed
+    }//GEN-LAST:event_Panel_Barra_De_ArribaMousePressed
 
-    private void jPanel3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseReleased
+    private void Panel_Barra_De_ArribaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Barra_De_ArribaMouseReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel3MouseReleased
+    }//GEN-LAST:event_Panel_Barra_De_ArribaMouseReleased
 
-    private void jPanel3MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseDragged
+    private void Panel_Barra_De_ArribaMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Barra_De_ArribaMouseDragged
 this.setLocation(this.getLocation().x + evt.getX() -x,this.getLocation().y + evt.getY() - y);  //movimiento de la ventana
-    }//GEN-LAST:event_jPanel3MouseDragged
+    }//GEN-LAST:event_Panel_Barra_De_ArribaMouseDragged
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         System.exit(0);
@@ -556,69 +692,41 @@ this.setLocation(this.getLocation().x + evt.getX() -x,this.getLocation().y + evt
     }//GEN-LAST:event_btn1MouseReleased
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-        this.setVisible(false);
+        this.setVisible(false);  
         OpcionClienteOInversinista c = new OpcionClienteOInversinista();
         c.setVisible(true);
     }//GEN-LAST:event_btn1ActionPerformed
 
-    private void Btn_ComunidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ComunidadActionPerformed
-        BarraInfo.setVisible(false);
-    }//GEN-LAST:event_Btn_ComunidadActionPerformed
-
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        BarraInfo.setVisible(true);
+        BarraInfo.setVisible(true); //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
     }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void Btn_InversionistaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_InversionistaMouseEntered
-Btn_Inversionista.setForeground(new Color(255,255,255));        // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_InversionistaMouseEntered
-
-    private void Btn_InversionistaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_InversionistaMouseExited
-    Btn_Inversionista.setForeground(new Color(204,204,204));     // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_InversionistaMouseExited
-
-    private void Btn_UsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_UsuarioMouseEntered
-     Btn_Usuario.setForeground(new Color(255,255,255));    // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_UsuarioMouseEntered
-
-    private void Btn_UsuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_UsuarioMouseExited
-Btn_Usuario.setForeground(new Color(204,204,204));        // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_UsuarioMouseExited
-
-    private void Btn_ComunidadMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_ComunidadMouseEntered
-   Btn_Comunidad.setForeground(new Color(255,255,255));      // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_ComunidadMouseEntered
-
-    private void Btn_ComunidadMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_ComunidadMouseExited
-     Btn_Comunidad.setForeground(new Color(204,204,204));     // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_ComunidadMouseExited
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void CorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CorreoActionPerformed
-        //PanelNotificacion_Inferior.setVisible(true);      // TODO add your handling code here:
+        //PanelNotificacion_Inferior.setVisible(true);      //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
     }//GEN-LAST:event_CorreoActionPerformed
 
     private void CorreoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorreoMouseEntered
- PanelNotificacion_Inferior.setVisible(true);        // TODO add your handling code here:
+ PanelNotificacion_Inferior.setVisible(true);        //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
     }//GEN-LAST:event_CorreoMouseEntered
 
     private void CorreoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorreoMouseExited
- PanelNotificacion_Inferior.setVisible(true);        // TODO add your handling code here:
+ PanelNotificacion_Inferior.setVisible(true);        //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
     }//GEN-LAST:event_CorreoMouseExited
 
     private void PanelNotificacion_InferiorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelNotificacion_InferiorMouseEntered
- PanelNotificacion_Inferior.setVisible(true);        // TODO add your handling code here:
+ PanelNotificacion_Inferior.setVisible(true);        //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
     }//GEN-LAST:event_PanelNotificacion_InferiorMouseEntered
 
     private void NotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificacionesActionPerformed
- PanelNotificacion_Inferior.setVisible(true);        // TODO add your handling code here:
+ //PanelNotificacion_Inferior.setVisible(true);        //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
     }//GEN-LAST:event_NotificacionesActionPerformed
 
     private void PanelNotificacion_InferiorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelNotificacion_InferiorMouseExited
- PanelNotificacion_Inferior.setVisible(false);        // TODO add your handling code here:
+// PanelNotificacion_Inferior.setVisible(false);        //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
     }//GEN-LAST:event_PanelNotificacion_InferiorMouseExited
 
     private void Btn_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_2ActionPerformed
@@ -626,27 +734,27 @@ Btn_Usuario.setForeground(new Color(204,204,204));        // TODO add your handl
     }//GEN-LAST:event_Btn_2ActionPerformed
 
     private void Btn_1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_1MouseEntered
-    Btn_1.setForeground(new Color(82,90,110));    // TODO add your handling code here:
+    Btn_1.setForeground(new Color(82,90,110));    //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
     }//GEN-LAST:event_Btn_1MouseEntered
 
     private void Btn_1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_1MouseExited
-       Btn_1.setForeground(new Color(82,90,100)); // TODO add your handling code here:
+       Btn_1.setForeground(new Color(82,90,100)); //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
     }//GEN-LAST:event_Btn_1MouseExited
 
     private void Btn_2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_2MouseEntered
-Btn_1.setForeground(new Color(82,90,100));        // TODO add your handling code here:
+Btn_1.setForeground(new Color(82,90,100));        //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
     }//GEN-LAST:event_Btn_2MouseEntered
 
     private void Btn_2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_2MouseExited
-Btn_1.setForeground(new Color(82,90,110));        // TODO add your handling code here:
+Btn_1.setForeground(new Color(82,90,110));        //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
     }//GEN-LAST:event_Btn_2MouseExited
 
     private void Btn_3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_3MouseEntered
-Btn_1.setForeground(new Color(82,90,110));        // TODO add your handling code here:
+Btn_1.setForeground(new Color(82,90,110));        //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
     }//GEN-LAST:event_Btn_3MouseEntered
 
     private void Btn_3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_3MouseExited
-Btn_1.setForeground(new Color(82,90,100));        // TODO add your handling code here:
+Btn_1.setForeground(new Color(82,90,100));        //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
     }//GEN-LAST:event_Btn_3MouseExited
 
     private void Btn_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_1ActionPerformed
@@ -656,6 +764,104 @@ Btn_1.setForeground(new Color(82,90,100));        // TODO add your handling code
     private void Btn_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_3ActionPerformed
+
+    private void Btn_ComunidadMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_ComunidadMouseEntered
+      Btn_Comunidad.setForeground(new Color(255,255,255));  //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+        Panel_Comiunidad.setVisible(true);  //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+
+    }//GEN-LAST:event_Btn_ComunidadMouseEntered
+
+    private void Btn_ComunidadMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_ComunidadMouseExited
+       Btn_Comunidad.setForeground(new Color(204,204,204));  //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+     Panel_Comiunidad.setVisible(true);   //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+
+    }//GEN-LAST:event_Btn_ComunidadMouseExited
+
+    private void Btn_ComunidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ComunidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_ComunidadActionPerformed
+
+    private void Btn_UsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_UsuarioMouseEntered
+      Btn_Usuario.setForeground(new Color(255,255,255));  //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Btn_UsuarioMouseEntered
+
+    private void Btn_UsuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_UsuarioMouseExited
+     Btn_Usuario.setForeground(new Color(204,204,204));   //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Btn_UsuarioMouseExited
+
+    private void Btn_InversionistaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_InversionistaMouseEntered
+      Btn_Inversionista.setForeground(new Color(255,255,255));  //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Btn_InversionistaMouseEntered
+
+    private void Btn_InversionistaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_InversionistaMouseExited
+      Btn_Inversionista.setForeground(new Color(204,204,204));  //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Btn_InversionistaMouseExited
+
+    private void N_ArticulosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N_ArticulosMouseEntered
+      // TODO add your handling code here:
+    }//GEN-LAST:event_N_ArticulosMouseEntered
+
+    private void Lb_SolicitudesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lb_SolicitudesMouseEntered
+     Lb_Solicitudes.setForeground(new Color(255,255,255));     //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Lb_SolicitudesMouseEntered
+
+    private void Lb_SolicitudesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lb_SolicitudesMouseExited
+       Lb_Solicitudes.setForeground(new Color(204,204,204));  //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Lb_SolicitudesMouseExited
+
+    private void Lb_MensajesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lb_MensajesMouseEntered
+        Lb_Mensajes.setForeground(new Color(255,255,255));//Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Lb_MensajesMouseEntered
+
+    private void Lb_MensajesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lb_MensajesMouseExited
+       Lb_Mensajes.setForeground(new Color(204,204,204)); //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Lb_MensajesMouseExited
+
+    private void Lb_ArticulosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lb_ArticulosMouseEntered
+       Lb_Articulos.setForeground(new Color(255,255,255)); // TODO add your handling code here:
+    }//GEN-LAST:event_Lb_ArticulosMouseEntered
+
+    private void Lb_ArticulosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lb_ArticulosMouseExited
+Lb_Articulos.setForeground(new Color(204,204,204));       //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Lb_ArticulosMouseExited
+
+    private void Panel_ComiunidadMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_ComiunidadMouseEntered
+       Panel_Comiunidad.setVisible(true); //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Panel_ComiunidadMouseEntered
+
+    private void Panel_ComiunidadMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_ComiunidadMouseExited
+      Panel_Comiunidad.setVisible(true);  //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Panel_ComiunidadMouseExited
+
+    private void Panel_Notificacion_SuperiorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Notificacion_SuperiorMouseEntered
+      //PanelNotificacion_Inferior.setVisible(true); //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Panel_Notificacion_SuperiorMouseEntered
+
+    private void Panel_Barra_De_ArribaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Barra_De_ArribaMouseEntered
+PanelNotificacion_Inferior.setVisible(false);       //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Panel_Barra_De_ArribaMouseEntered
+
+    private void Lb_ForoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lb_ForoMouseEntered
+       Lb_Foro.setForeground(new Color(255,255,255)); //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Lb_ForoMouseEntered
+
+    private void Lb_ForoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lb_ForoMouseExited
+     Lb_Foro.setForeground(new Color(204,204,204));    //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Lb_ForoMouseExited
+
+    private void Lb_New_PagiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lb_New_PagiMouseEntered
+      
+        Lb_New_Pagi.setForeground(new Color(255,255,255)); //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Lb_New_PagiMouseEntered
+
+    private void Lb_New_PagiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lb_New_PagiMouseExited
+      
+       Lb_New_Pagi.setForeground(new Color(204,204,204));  //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Lb_New_PagiMouseExited
+
+    private void Panel_De_Arriba_CentradoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_De_Arriba_CentradoMouseEntered
+ Panel_Comiunidad.setVisible(false);        //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+    }//GEN-LAST:event_Panel_De_Arriba_CentradoMouseEntered
 
     /**
      * @param args the command line arguments
@@ -702,9 +908,20 @@ Btn_1.setForeground(new Color(82,90,100));        // TODO add your handling code
     private javax.swing.JButton Btn_Inversionista;
     private javax.swing.JButton Btn_Usuario;
     private javax.swing.JButton Correo;
+    private javax.swing.JLabel Lb_Articulos;
+    private javax.swing.JLabel Lb_Foro;
+    private javax.swing.JLabel Lb_Mensajes;
+    private javax.swing.JLabel Lb_New_Pagi;
+    private javax.swing.JLabel Lb_Solicitudes;
+    private javax.swing.JLabel N_Articulos;
+    private javax.swing.JLabel N_Mensajes;
+    private javax.swing.JLabel N_Solicitudes;
     private javax.swing.JButton Notificaciones;
     private javax.swing.JPanel PanelNotificacion_Inferior;
     private javax.swing.JPanel PanelPrincipal;
+    private javax.swing.JPanel Panel_Barra_De_Arriba;
+    private javax.swing.JPanel Panel_Comiunidad;
+    private javax.swing.JPanel Panel_De_Arriba_Centrado;
     private javax.swing.JPanel Panel_Notificacion_Superior;
     private javax.swing.JButton btn1;
     private com.bolivia.label.CLabel cLabel1;
@@ -712,18 +929,11 @@ Btn_1.setForeground(new Color(82,90,100));        // TODO add your handling code
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lbFecha;
     private javax.swing.JLabel lbHora;
     // End of variables declaration//GEN-END:variables

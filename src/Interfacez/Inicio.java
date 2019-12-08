@@ -94,6 +94,11 @@ Thread hilo;
         Btn_Noticias = new javax.swing.JButton();
         PanelPrincipal = new javax.swing.JPanel();
         BarraInfo = new javax.swing.JPanel();
+        Panel_Barra_info = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         Panel_Barra_De_Arriba = new javax.swing.JPanel();
         Lb_Cerrar_App = new javax.swing.JLabel();
         Iniciar_Sesion = new javax.swing.JLabel();
@@ -220,17 +225,57 @@ Thread hilo;
 
         PanelPrincipal.setBackground(new java.awt.Color(0, 153, 153));
 
-        BarraInfo.setBackground(new java.awt.Color(255, 255, 102));
+        BarraInfo.setBackground(new java.awt.Color(0, 153, 153));
+
+        Panel_Barra_info.setBackground(new java.awt.Color(255, 255, 51));
+        Panel_Barra_info.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btncerrarsesion1.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btncerrarsesion2.png"))); // NOI18N
+        jButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btncerrarsesion2.png"))); // NOI18N
+        Panel_Barra_info.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 70));
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/botonHome1.png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
+        jButton3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/botonHome2.png"))); // NOI18N
+        jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/botonHome2.png"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        Panel_Barra_info.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 0, 60, 70));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btncfg1.png"))); // NOI18N
+        jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btncfg2.png"))); // NOI18N
+        jButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btncfg2.png"))); // NOI18N
+        Panel_Barra_info.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 60, 70));
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btnperfil1.png"))); // NOI18N
+        jButton4.setBorder(null);
+        jButton4.setBorderPainted(false);
+        jButton4.setContentAreaFilled(false);
+        jButton4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btnperfil2.png"))); // NOI18N
+        jButton4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btnperfil2.png"))); // NOI18N
+        Panel_Barra_info.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 0, 60, 70));
 
         javax.swing.GroupLayout BarraInfoLayout = new javax.swing.GroupLayout(BarraInfo);
         BarraInfo.setLayout(BarraInfoLayout);
         BarraInfoLayout.setHorizontalGroup(
             BarraInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addComponent(Panel_Barra_info, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         BarraInfoLayout.setVerticalGroup(
             BarraInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 74, Short.MAX_VALUE)
+            .addComponent(Panel_Barra_info, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
@@ -243,10 +288,10 @@ Thread hilo;
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelPrincipalLayout.createSequentialGroup()
                 .addComponent(BarraInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 336, Short.MAX_VALUE))
+                .addGap(0, 337, Short.MAX_VALUE))
         );
 
-        getContentPane().add(PanelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 100, 1000, 410));
+        getContentPane().add(PanelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 940, 410));
 
         Panel_Barra_De_Arriba.setBackground(new java.awt.Color(82, 90, 128));
         Panel_Barra_De_Arriba.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -286,7 +331,7 @@ Thread hilo;
         Iniciar_Sesion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Iniciar_Sesion.setText("Iniciar sesión");
         Iniciar_Sesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Panel_Barra_De_Arriba.add(Iniciar_Sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 80, 30));
+        Panel_Barra_De_Arriba.add(Iniciar_Sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 80, 30));
 
         Btn_Registrarte.setBackground(new java.awt.Color(153, 153, 153));
         Btn_Registrarte.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -1075,6 +1120,10 @@ Panel_Usuario.setVisible(true);        //Tag: *hace referencia a interfaces y di
       BarraInfo.setVisible(true);
     }//GEN-LAST:event_Btn_HomeActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1145,6 +1194,7 @@ Panel_Usuario.setVisible(true);        //Tag: *hace referencia a interfaces y di
     private javax.swing.JPanel PanelNotificacion_Inferior;
     private javax.swing.JPanel PanelPrincipal;
     private javax.swing.JPanel Panel_Barra_De_Arriba;
+    private javax.swing.JPanel Panel_Barra_info;
     private javax.swing.JPanel Panel_Comiunidad;
     private javax.swing.JPanel Panel_De_Abajo;
     private javax.swing.JPanel Panel_De_Arriba_Centrado;
@@ -1152,6 +1202,10 @@ Panel_Usuario.setVisible(true);        //Tag: *hace referencia a interfaces y di
     private javax.swing.JPanel Panel_Notificacion_Superior;
     private javax.swing.JPanel Panel_Usuario;
     private com.bolivia.label.CLabel cLabel1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JLabel lbFecha;
     private javax.swing.JLabel lbHora;

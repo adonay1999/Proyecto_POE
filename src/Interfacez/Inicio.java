@@ -85,15 +85,18 @@ Thread hilo;
         jButton5 = new javax.swing.JButton();
         Panel_Notificacion_Superior = new javax.swing.JPanel();
         cLabel1 = new com.bolivia.label.CLabel();
-        jButton3 = new javax.swing.JButton();
+        Correo = new javax.swing.JButton();
         PanelNotificacion_Inferior = new javax.swing.JPanel();
+        Btn_2 = new javax.swing.JButton();
+        Btn_1 = new javax.swing.JButton();
+        Btn_3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        Notificaciones = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
@@ -338,24 +341,24 @@ Thread hilo;
         cLabel1.setBackground(new java.awt.Color(102, 102, 102));
         cLabel1.setText("");
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/mensaje1.png"))); // NOI18N
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.setDisabledIcon(null);
-        jButton3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/mensaje2.png"))); // NOI18N
-        jButton3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/mensaje2.png"))); // NOI18N
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        Correo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/mensaje1.png"))); // NOI18N
+        Correo.setBorder(null);
+        Correo.setBorderPainted(false);
+        Correo.setContentAreaFilled(false);
+        Correo.setDisabledIcon(null);
+        Correo.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/mensaje2.png"))); // NOI18N
+        Correo.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/mensaje2.png"))); // NOI18N
+        Correo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton3MouseEntered(evt);
+                CorreoMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton3MouseExited(evt);
+                CorreoMouseExited(evt);
             }
         });
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Correo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                CorreoActionPerformed(evt);
             }
         });
 
@@ -368,82 +371,107 @@ Thread hilo;
                 PanelNotificacion_InferiorMouseExited(evt);
             }
         });
+        PanelNotificacion_Inferior.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Btn_2.setBorder(null);
+        Btn_2.setBorderPainted(false);
+        Btn_2.setContentAreaFilled(false);
+        Btn_2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Btn_2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Btn_2MouseExited(evt);
+            }
+        });
+        Btn_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_2ActionPerformed(evt);
+            }
+        });
+        PanelNotificacion_Inferior.add(Btn_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 160, 30));
+
+        Btn_1.setBorder(null);
+        Btn_1.setBorderPainted(false);
+        Btn_1.setContentAreaFilled(false);
+        Btn_1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Btn_1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Btn_1MouseExited(evt);
+            }
+        });
+        Btn_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_1ActionPerformed(evt);
+            }
+        });
+        PanelNotificacion_Inferior.add(Btn_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, 0, 160, 20));
+
+        Btn_3.setBorder(null);
+        Btn_3.setBorderPainted(false);
+        Btn_3.setContentAreaFilled(false);
+        Btn_3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Btn_3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Btn_3MouseExited(evt);
+            }
+        });
+        Btn_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_3ActionPerformed(evt);
+            }
+        });
+        PanelNotificacion_Inferior.add(Btn_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, 50, 160, 20));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 161, 255));
         jLabel2.setText("&");
         jLabel2.setMaximumSize(new java.awt.Dimension(9, 14));
+        PanelNotificacion_Inferior.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 4, 50, 15));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 161, 255));
         jLabel3.setText("&");
+        PanelNotificacion_Inferior.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 24, 50, 21));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 161, 255));
         jLabel4.setText("&");
+        PanelNotificacion_Inferior.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 53, 50, 19));
 
         jLabel8.setBackground(new java.awt.Color(204, 204, 204));
         jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Solicitudes");
+        PanelNotificacion_Inferior.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 4, 100, 15));
 
         jLabel9.setBackground(new java.awt.Color(204, 204, 204));
         jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setText("Mensajes");
+        PanelNotificacion_Inferior.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 27, 100, 15));
 
         jLabel10.setBackground(new java.awt.Color(204, 204, 204));
         jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setText("Articulos");
+        PanelNotificacion_Inferior.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 55, 90, 15));
 
-        javax.swing.GroupLayout PanelNotificacion_InferiorLayout = new javax.swing.GroupLayout(PanelNotificacion_Inferior);
-        PanelNotificacion_Inferior.setLayout(PanelNotificacion_InferiorLayout);
-        PanelNotificacion_InferiorLayout.setHorizontalGroup(
-            PanelNotificacion_InferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelNotificacion_InferiorLayout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addGroup(PanelNotificacion_InferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelNotificacion_InferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(PanelNotificacion_InferiorLayout.createSequentialGroup()
-                        .addGroup(PanelNotificacion_InferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(34, 34, 34))))
-        );
-        PanelNotificacion_InferiorLayout.setVerticalGroup(
-            PanelNotificacion_InferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelNotificacion_InferiorLayout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addGroup(PanelNotificacion_InferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(PanelNotificacion_InferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PanelNotificacion_InferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/notificacion1.png"))); // NOI18N
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jButton4.setDisabledIcon(null);
-        jButton4.setDisabledSelectedIcon(null);
-        jButton4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/notificacion2.png"))); // NOI18N
-        jButton4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/notificacion2.png"))); // NOI18N
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        Notificaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/notificacion1.png"))); // NOI18N
+        Notificaciones.setBorder(null);
+        Notificaciones.setBorderPainted(false);
+        Notificaciones.setContentAreaFilled(false);
+        Notificaciones.setDisabledIcon(null);
+        Notificaciones.setDisabledSelectedIcon(null);
+        Notificaciones.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/notificacion2.png"))); // NOI18N
+        Notificaciones.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/notificacion2.png"))); // NOI18N
+        Notificaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                NotificacionesActionPerformed(evt);
             }
         });
 
@@ -452,12 +480,12 @@ Thread hilo;
         Panel_Notificacion_SuperiorLayout.setHorizontalGroup(
             Panel_Notificacion_SuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_Notificacion_SuperiorLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(PanelNotificacion_Inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE)
+                .addComponent(PanelNotificacion_Inferior, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Panel_Notificacion_SuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Notificaciones, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                    .addComponent(Correo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
@@ -471,9 +499,9 @@ Thread hilo;
                         .addGroup(Panel_Notificacion_SuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(Panel_Notificacion_SuperiorLayout.createSequentialGroup()
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Correo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(Notificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_Notificacion_SuperiorLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -569,29 +597,65 @@ Btn_Usuario.setForeground(new Color(204,204,204));        // TODO add your handl
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void CorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CorreoActionPerformed
+        //PanelNotificacion_Inferior.setVisible(true);      // TODO add your handling code here:
+    }//GEN-LAST:event_CorreoActionPerformed
 
-    private void jButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseEntered
+    private void CorreoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorreoMouseEntered
  PanelNotificacion_Inferior.setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3MouseEntered
+    }//GEN-LAST:event_CorreoMouseEntered
 
-    private void jButton3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseExited
- PanelNotificacion_Inferior.setVisible(false);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3MouseExited
+    private void CorreoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorreoMouseExited
+ PanelNotificacion_Inferior.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_CorreoMouseExited
 
     private void PanelNotificacion_InferiorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelNotificacion_InferiorMouseEntered
  PanelNotificacion_Inferior.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_PanelNotificacion_InferiorMouseEntered
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void NotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificacionesActionPerformed
  PanelNotificacion_Inferior.setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_NotificacionesActionPerformed
 
     private void PanelNotificacion_InferiorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelNotificacion_InferiorMouseExited
  PanelNotificacion_Inferior.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_PanelNotificacion_InferiorMouseExited
+
+    private void Btn_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_2ActionPerformed
+
+    private void Btn_1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_1MouseEntered
+    Btn_1.setForeground(new Color(82,90,110));    // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_1MouseEntered
+
+    private void Btn_1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_1MouseExited
+       Btn_1.setForeground(new Color(82,90,100)); // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_1MouseExited
+
+    private void Btn_2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_2MouseEntered
+Btn_1.setForeground(new Color(82,90,100));        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_2MouseEntered
+
+    private void Btn_2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_2MouseExited
+Btn_1.setForeground(new Color(82,90,110));        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_2MouseExited
+
+    private void Btn_3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_3MouseEntered
+Btn_1.setForeground(new Color(82,90,110));        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_3MouseEntered
+
+    private void Btn_3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_3MouseExited
+Btn_1.setForeground(new Color(82,90,100));        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_3MouseExited
+
+    private void Btn_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_1ActionPerformed
+
+    private void Btn_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -631,9 +695,14 @@ Btn_Usuario.setForeground(new Color(204,204,204));        // TODO add your handl
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BarraInfo;
+    private javax.swing.JButton Btn_1;
+    private javax.swing.JButton Btn_2;
+    private javax.swing.JButton Btn_3;
     private javax.swing.JButton Btn_Comunidad;
     private javax.swing.JButton Btn_Inversionista;
     private javax.swing.JButton Btn_Usuario;
+    private javax.swing.JButton Correo;
+    private javax.swing.JButton Notificaciones;
     private javax.swing.JPanel PanelNotificacion_Inferior;
     private javax.swing.JPanel PanelPrincipal;
     private javax.swing.JPanel Panel_Notificacion_Superior;
@@ -641,8 +710,6 @@ Btn_Usuario.setForeground(new Color(204,204,204));        // TODO add your handl
     private com.bolivia.label.CLabel cLabel1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

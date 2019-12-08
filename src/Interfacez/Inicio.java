@@ -33,10 +33,11 @@ Thread hilo;
     public Inicio() {
         initComponents();
         ////////////// Interfacez grafica /////////////////////
-        BarraInfo.setVisible(false);
-        Panel_Comiunidad.setVisible(false);
-        Panel_Usuario.setVisible(false);
-        PanelNotificacion_Inferior.setVisible(false);
+        BarraInfo.setVisible(false); //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+        Btn_Ocultar_BarrInfo.setVisible(false); //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+        Panel_Comiunidad.setVisible(false); //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+        Panel_Usuario.setVisible(false); //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+        PanelNotificacion_Inferior.setVisible(false); //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
         this.setLocationRelativeTo(null);   //Centrar la ventana
         /////////////// Interfacez graficas ///////////////////
         
@@ -132,6 +133,7 @@ Thread hilo;
         Lb_Proyecto = new javax.swing.JLabel();
         Panel_Home = new javax.swing.JPanel();
         Btn_Home = new javax.swing.JButton();
+        Btn_Ocultar_BarrInfo = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
@@ -288,7 +290,7 @@ Thread hilo;
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelPrincipalLayout.createSequentialGroup()
                 .addComponent(BarraInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 337, Short.MAX_VALUE))
+                .addGap(0, 340, Short.MAX_VALUE))
         );
 
         getContentPane().add(PanelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 940, 410));
@@ -842,6 +844,27 @@ Thread hilo;
         });
         Panel_Home.add(Btn_Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 70, 70));
 
+        Btn_Ocultar_BarrInfo.setBackground(new java.awt.Color(82, 90, 128));
+        Btn_Ocultar_BarrInfo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Ocultar_BarrInfo.setForeground(new java.awt.Color(0, 102, 102));
+        Btn_Ocultar_BarrInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btnocultarbarra1.png"))); // NOI18N
+        Btn_Ocultar_BarrInfo.setBorder(null);
+        Btn_Ocultar_BarrInfo.setContentAreaFilled(false);
+        Btn_Ocultar_BarrInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Btn_Ocultar_BarrInfo.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btnocultarbarra2.png"))); // NOI18N
+        Btn_Ocultar_BarrInfo.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/btnocultarbarra2.png"))); // NOI18N
+        Btn_Ocultar_BarrInfo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Btn_Ocultar_BarrInfoMouseEntered(evt);
+            }
+        });
+        Btn_Ocultar_BarrInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Ocultar_BarrInfoActionPerformed(evt);
+            }
+        });
+        Panel_Home.add(Btn_Ocultar_BarrInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 70, 70));
+
         Panel_Barra_De_Arriba.add(Panel_Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 90));
 
         getContentPane().add(Panel_Barra_De_Arriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 100));
@@ -1117,12 +1140,24 @@ Panel_Usuario.setVisible(true);        //Tag: *hace referencia a interfaces y di
     }//GEN-LAST:event_Btn_HomeMouseEntered
 
     private void Btn_HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HomeActionPerformed
-      BarraInfo.setVisible(true);
+    Btn_Home.setVisible(false);
+    BarraInfo.setVisible(true);
+    Btn_Ocultar_BarrInfo.setVisible(true);
     }//GEN-LAST:event_Btn_HomeActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void Btn_Ocultar_BarrInfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_Ocultar_BarrInfoMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Ocultar_BarrInfoMouseEntered
+
+    private void Btn_Ocultar_BarrInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Ocultar_BarrInfoActionPerformed
+     BarraInfo.setVisible(false);  //Tag: *hace referencia a interfaces y diseños visual de la aplicacion*
+     Btn_Ocultar_BarrInfo.setVisible(false);
+     Btn_Home.setVisible(true);
+    }//GEN-LAST:event_Btn_Ocultar_BarrInfoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1170,6 +1205,7 @@ Panel_Usuario.setVisible(true);        //Tag: *hace referencia a interfaces y di
     private javax.swing.JButton Btn_Home;
     private javax.swing.JButton Btn_Inversionista;
     private javax.swing.JButton Btn_Noticias;
+    private javax.swing.JButton Btn_Ocultar_BarrInfo;
     private javax.swing.JButton Btn_Registrarte;
     private javax.swing.JButton Btn_Usuario;
     private javax.swing.JButton Correo;

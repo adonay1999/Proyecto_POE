@@ -6,7 +6,9 @@
 package Interfacez;
 
 import java.awt.Color;
+import java.awt.Panel;
 import java.awt.PopupMenu;
+import java.sql.Connection;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,7 +26,8 @@ public class Inicio extends javax.swing.JFrame implements Runnable{
 String hora,minutos,segundos;
 Thread hilo;
 //////////Codigo de Hora  ////////////////
-
+ 
+    
 
     /**
      * Creates new form NewJFrame
@@ -83,9 +86,10 @@ Thread hilo;
     
     
     
-     //////INS////////
+     //////INSTANCIA////////
         ////Interfacez///////
         Pd_Intefaz_grafica.Pd_Perfil perfil = new Pd_Intefaz_grafica.Pd_Perfil();
+        
     
     
     /**
@@ -117,7 +121,6 @@ Thread hilo;
         Iniciar_Sesion = new javax.swing.JLabel();
         Btn_Registrarte = new javax.swing.JButton();
         Panel_Notificacion_Superior = new javax.swing.JPanel();
-        cLabel1 = new com.bolivia.label.CLabel();
         Correo = new javax.swing.JButton();
         PanelNotificacion_Inferior = new javax.swing.JPanel();
         Lb_Solicitudes = new javax.swing.JLabel();
@@ -130,6 +133,7 @@ Thread hilo;
         N_Mensajes = new javax.swing.JLabel();
         N_Articulos = new javax.swing.JLabel();
         Notificaciones = new javax.swing.JButton();
+        cLabel2 = new com.bolivia.label.CLabel();
         Panel_De_Arriba_Centrado = new javax.swing.JPanel();
         Btn_Comunidad = new javax.swing.JButton();
         Btn_Usuario = new javax.swing.JButton();
@@ -296,7 +300,9 @@ Thread hilo;
         );
         BarraInfoLayout.setVerticalGroup(
             BarraInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel_Barra_info, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(BarraInfoLayout.createSequentialGroup()
+                .addComponent(Panel_Barra_info, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(340, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
@@ -307,9 +313,7 @@ Thread hilo;
         );
         PanelPrincipalLayout.setVerticalGroup(
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                .addComponent(BarraInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 340, Short.MAX_VALUE))
+            .addComponent(BarraInfo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         getContentPane().add(PanelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 940, 410));
@@ -380,9 +384,6 @@ Thread hilo;
                 Panel_Notificacion_SuperiorMouseEntered(evt);
             }
         });
-
-        cLabel1.setBackground(new java.awt.Color(102, 102, 102));
-        cLabel1.setText("");
 
         Correo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/mensaje1.png"))); // NOI18N
         Correo.setBorder(null);
@@ -515,7 +516,6 @@ Thread hilo;
         N_Solicitudes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         N_Solicitudes.setForeground(new java.awt.Color(0, 161, 255));
         N_Solicitudes.setText("&");
-        N_Solicitudes.setMaximumSize(new java.awt.Dimension(9, 14));
         PanelNotificacion_Inferior.add(N_Solicitudes, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 4, 50, 15));
 
         N_Mensajes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -538,7 +538,6 @@ Thread hilo;
         Notificaciones.setBorderPainted(false);
         Notificaciones.setContentAreaFilled(false);
         Notificaciones.setDisabledIcon(null);
-        Notificaciones.setDisabledSelectedIcon(null);
         Notificaciones.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/notificacion2.png"))); // NOI18N
         Notificaciones.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Btn_imagenes/notificacion2.png"))); // NOI18N
         Notificaciones.addActionListener(new java.awt.event.ActionListener() {
@@ -547,26 +546,32 @@ Thread hilo;
             }
         });
 
+        cLabel2.setBackground(new java.awt.Color(102, 102, 102));
+        cLabel2.setText("");
+
         javax.swing.GroupLayout Panel_Notificacion_SuperiorLayout = new javax.swing.GroupLayout(Panel_Notificacion_Superior);
         Panel_Notificacion_Superior.setLayout(Panel_Notificacion_SuperiorLayout);
         Panel_Notificacion_SuperiorLayout.setHorizontalGroup(
             Panel_Notificacion_SuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_Notificacion_SuperiorLayout.createSequentialGroup()
-                .addGap(0, 3, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(PanelNotificacion_Inferior, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Panel_Notificacion_SuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Notificaciones, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
                     .addComponent(Correo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16))
+                .addGap(12, 12, 12)
+                .addComponent(cLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         Panel_Notificacion_SuperiorLayout.setVerticalGroup(
             Panel_Notificacion_SuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_Notificacion_SuperiorLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(Panel_Notificacion_SuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel_Notificacion_SuperiorLayout.createSequentialGroup()
+                        .addComponent(cLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(Panel_Notificacion_SuperiorLayout.createSequentialGroup()
                         .addComponent(Correo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -575,10 +580,7 @@ Thread hilo;
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_Notificacion_SuperiorLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(PanelNotificacion_Inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28))
-                    .addGroup(Panel_Notificacion_SuperiorLayout.createSequentialGroup()
-                        .addComponent(cLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(28, 28, 28))))
         );
 
         Panel_Barra_De_Arriba.add(Panel_Notificacion_Superior, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 280, 80));
@@ -1267,7 +1269,7 @@ Panel_Usuario.setVisible(true);        //Tag: *hace referencia a interfaces y di
     private javax.swing.JPanel Panel_Home;
     private javax.swing.JPanel Panel_Notificacion_Superior;
     private javax.swing.JPanel Panel_Usuario;
-    private com.bolivia.label.CLabel cLabel1;
+    private com.bolivia.label.CLabel cLabel2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

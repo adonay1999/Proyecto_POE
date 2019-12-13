@@ -5,6 +5,12 @@
  */
 package Interfacez;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Erick Piche
@@ -32,9 +38,22 @@ public class Inversionista extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        creditoinv = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        txtnombreinv = new javax.swing.JTextField();
+        txtapellidoinv = new javax.swing.JTextField();
+        telefonoinv = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        preferenciainv = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        correoinv = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        contrainv = new javax.swing.JPasswordField();
+        Guardarinv = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -68,17 +87,55 @@ public class Inversionista extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Crea cuenta de Inversionista");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 360, 60));
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 200, 30));
+
+        creditoinv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                creditoinvActionPerformed(evt);
+            }
+        });
+        jPanel2.add(creditoinv, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 360, 30));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 255, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Es rápido y fácil");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 130, 30));
 
-        jLabel3.setText("Nombre de la empresa");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+        jLabel3.setText("tarjeta de credito");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
+
+        txtnombreinv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnombreinvActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtnombreinv, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 170, 30));
+        jPanel2.add(txtapellidoinv, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 170, 30));
+        jPanel2.add(telefonoinv, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 360, 30));
+
+        jLabel4.setText("Nombre ");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+
+        jLabel5.setText("Apellido");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, 10));
+
+        jLabel6.setText("contraseña");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, 10));
+
+        jLabel7.setText("Telefono");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
+        jPanel2.add(preferenciainv, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 360, 30));
+
+        jLabel8.setText("categorias preferenciales ");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
+        jPanel2.add(correoinv, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 360, 30));
+
+        jLabel9.setText("Direccion de correo ");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, 10));
+        jPanel2.add(contrainv, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 360, 30));
+
+        Guardarinv.setText("Registrarse ");
+        jPanel2.add(Guardarinv, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 400, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 60, 490, 450));
 
@@ -90,6 +147,14 @@ public class Inversionista extends javax.swing.JFrame {
         OpcionClienteOInversinista Opc = new OpcionClienteOInversinista();
         Opc.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void creditoinvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditoinvActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_creditoinvActionPerformed
+
+    private void txtnombreinvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreinvActionPerformed
+         
+    }//GEN-LAST:event_txtnombreinvActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,12 +192,25 @@ public class Inversionista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Guardarinv;
+    private javax.swing.JPasswordField contrainv;
+    private javax.swing.JTextField correoinv;
+    private javax.swing.JTextField creditoinv;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField preferenciainv;
+    private javax.swing.JTextField telefonoinv;
+    private javax.swing.JTextField txtapellidoinv;
+    private javax.swing.JTextField txtnombreinv;
     // End of variables declaration//GEN-END:variables
 }

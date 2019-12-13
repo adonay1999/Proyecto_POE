@@ -5,11 +5,21 @@
  */
 package Interfacez;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Erick Piche
  */
 public class Emprendedor extends javax.swing.JFrame {
+    ConecxionBD con = new ConecxionBD("emprendedor");
+    ConecxionBD con1 = new ConecxionBD("productos");
+    Connection cn = con.conexion();
 
     /**
      * Creates new form Emprendedor
@@ -33,15 +43,21 @@ public class Emprendedor extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        txtnombreemp = new javax.swing.JTextField();
+        txtapellidoemp = new javax.swing.JTextField();
+        txttelefonoemp = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        txtcontraemp = new javax.swing.JPasswordField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txtcorreoemp = new javax.swing.JTextField();
+        txtdomicilioemp = new javax.swing.JTextField();
+        txtexperienciaemp = new javax.swing.JTextField();
+        btnguardaremp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -73,7 +89,7 @@ public class Emprendedor extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 255, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Crea cuenta de Emprendedor");
+        jLabel2.setText("Crea cuenta de emprendedor ");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 360, 60));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -82,9 +98,9 @@ public class Emprendedor extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Es rápido y fácil");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 130, 30));
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 150, 30));
-        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 150, 30));
-        jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 320, 30));
+        jPanel2.add(txtnombreemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 150, 30));
+        jPanel2.add(txtapellidoemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 150, 30));
+        jPanel2.add(txttelefonoemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 320, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel3.setText("Correo Electronico");
@@ -103,10 +119,29 @@ public class Emprendedor extends javax.swing.JFrame {
         jLabel6.setText("Contraseña");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 60, 20));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setText("Fecha de nacimiento");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 130, 20));
-        jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 320, 30));
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel7.setText("numero telefonico ");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 130, 20));
+        jPanel2.add(txtcontraemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 320, 30));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel8.setText("Domicilio");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 130, 20));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel9.setText("experiencia ");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 130, 20));
+        jPanel2.add(txtcorreoemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 320, 30));
+        jPanel2.add(txtdomicilioemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 320, 30));
+        jPanel2.add(txtexperienciaemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 320, 30));
+
+        btnguardaremp.setText("Registrarse");
+        btnguardaremp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnguardarempActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnguardaremp, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 500, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 520, 550));
 
@@ -119,6 +154,26 @@ public class Emprendedor extends javax.swing.JFrame {
         OpcionClienteOInversinista Opc = new OpcionClienteOInversinista();
         Opc.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btnguardarempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarempActionPerformed
+        
+        Connection cn = con.conexion();
+        try {
+            PreparedStatement pps = cn.prepareStatement("INSERT INTO proyecto  (nombre,apellido,correo,contraseña, domicilio, experiencia, numero) VALUES (?,?,?,?,?,?,?)");
+                pps.setString(1, txtnombreemp.getText());
+                pps.setString(2, txtapellidoemp.getText());
+                pps.setString(3, txtcorreoemp.getText());
+                pps.setString(4, txtcontraemp.getText());
+                pps.setString(5, txtdomicilioemp.getText());
+                pps.setString(6, txtexperienciaemp.getText());
+                pps.setString(7, txttelefonoemp.getText());
+                pps.execute();
+                JOptionPane.showMessageDialog(null, "empresario registrado con exito");
+
+            } catch (SQLException ex) {
+                Logger.getLogger(Emprendedor.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_btnguardarempActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,6 +211,7 @@ public class Emprendedor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnguardaremp;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -164,11 +220,16 @@ public class Emprendedor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField txtapellidoemp;
+    private javax.swing.JPasswordField txtcontraemp;
+    private javax.swing.JTextField txtcorreoemp;
+    private javax.swing.JTextField txtdomicilioemp;
+    private javax.swing.JTextField txtexperienciaemp;
+    private javax.swing.JTextField txtnombreemp;
+    private javax.swing.JTextField txttelefonoemp;
     // End of variables declaration//GEN-END:variables
 }

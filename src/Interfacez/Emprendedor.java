@@ -157,9 +157,11 @@ public class Emprendedor extends javax.swing.JFrame {
 
     private void btnguardarempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarempActionPerformed
         
-        Connection cn = con.conexion();
+      
         try {
-            PreparedStatement pps = cn.prepareStatement("INSERT INTO proyecto  (nombre,apellido,correo,contraseña, domicilio, experiencia, numero) VALUES (?,?,?,?,?,?,?)");
+            
+            String sql=("INSERT INTO emprendedor (nombre,apellido,correo,contraseña, domicilio, experiencia, numero) VALUES (?,?,?,?,?,?,?)");
+            PreparedStatement pps = cn.prepareStatement(sql);
                 pps.setString(1, txtnombreemp.getText());
                 pps.setString(2, txtapellidoemp.getText());
                 pps.setString(3, txtcorreoemp.getText());
